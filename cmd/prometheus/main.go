@@ -187,7 +187,7 @@ func (c *flagConfig) setFeatureListOptions(logger log.Logger) error {
 				level.Warn(logger).Log("msg", "Remote write receiver enabled via feature flag remote-write-receiver. This is DEPRECATED. Use --web.enable-remote-write-receiver.")
 			case "otlp-write-receiver":
 				c.web.EnableOTLPWriteReceiver = true
-				level.Info(logger).Log("msg", "Experimental OTLP write receiver enabled")
+				level.Info(logger).Log("msg", "OTLP write receiver enabled")
 			case "expand-external-labels":
 				c.enableExpandExternalLabels = true
 				level.Info(logger).Log("msg", "Experimental expand-external-labels enabled")
