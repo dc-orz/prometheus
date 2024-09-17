@@ -10,19 +10,19 @@
 * [FEATURE] Scraping: Add the ability to set custom `http_headers` in config. #14817
 * [FEATURE] Scraping: Support feature flag `created-timestamp-zero-ingestion` in OpenMetrics. #14356, #14815
 * [FEATURE] Scraping: `scrape_failure_log_file` option to log failures to a file. #14734
-* [FEATURE] PromQL: Delay removal of `__name__` label - feature flag `promql-delayed-name-removal`. #14477
-* [FEATURE] OTLP receiver: Optional promotion of resource attributes to series labels. #14200
+* [FEATURE] OTLP receiver: Optional promotion of resource attributes to series labels, via setting `otlp.promote_resource_attributes`. #14200
 * [FEATURE] API: Support multiple `--web.listen-address`. #14665
 * [FEATURE] Remote-Write: Support Google Cloud Monitoring authorization. #14346
 * [FEATURE] Promtool: `tsdb create-blocks` new option to add labels. #14403
 * [FEATURE] Promtool: `promtool test` adds `--junit` flag to format results. #14506
 * [ENHANCEMENT] OTLP receiver: Warn on exponential histograms with zero count and non-zero sum. #14706
 * [ENHANCEMENT] OTLP receiver: Interrupt translation on context cancellation/timeout. #14612
-* [ENHANCEMENT] PromQL: Improve detail in distributed tracing. #14816
 * [ENHANCEMENT] PromQL: Experimental `sort_by_label` and `sort_by_label_desc` sort by all labels when label is equal. #14655
 * [ENHANCEMENT] PromQL: Clarify error message logged when Go runtime panic occurs during query evaluation. #14621
 * [ENHANCEMENT] PromQL: Use Kahan summation for better accuracy in `avg` and `avg_over_time`. #14413
-* [PERF] Remote-Read: Support streaming mode. #11379
+* [ENHANCEMENT] PromQL: Delay deletion of `__name__` label to the end of the query evaluation. This is **experimental** and enabled under the feature-flag `promql-delayed-name-removal`. #14477
+* [ENHANCEMENT] Tracing: Improve PromQL tracing, including showing the operation performed for aggregations, operators, and calls. #14816
+* [PERF] Remote-Read client: Enable streaming remote read if the server supports it. #11379
 * [PERF] TSDB: Query in-order and out-of-order series together. #14354, #14693, #14714, #14831, #14874
 * [PERF] TSDB: Streamline reading of overlapping out-of-order head chunks. #14729
 * [BUGFIX] SD: Fix dropping targets (with feature flag `new-service-discovery-manager`). #13147
